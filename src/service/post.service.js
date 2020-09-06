@@ -22,7 +22,6 @@ class PostService {
     }
 
     getPostById(id) {
-        console.log(id)
         return db.Post.findOne({_id: id})
     }
 

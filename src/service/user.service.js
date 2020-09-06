@@ -3,7 +3,6 @@ const commonService = require("./common.service")
 
 class UserService {
     async createUser(user) {
-        console.log(user)
         let checkUser = await db.User.findOne({email: user.email.toLowerCase()})
         let hp
 
@@ -28,7 +27,6 @@ class UserService {
             password: user.password,
             salt: user.salt
         })  
-        console.log(newUser)
         return newUser.save()
     }
 
@@ -45,7 +43,6 @@ class UserService {
     }
 
     updateUser(userId, user) {
-        console.log(user)
         return db.User.findByIdAndUpdate(userId,
             {
                 name: user.name,

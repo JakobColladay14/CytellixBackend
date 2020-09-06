@@ -4,7 +4,6 @@ class PostController {
 
     async newPost(req, res) {
         let { userId } = req.params
-        console.log(userId)
         let newPost = await postService.createPost(req.body, userId)
 
         res.json(newPost)
@@ -12,9 +11,8 @@ class PostController {
 
     async getPostsByUser(req, res) {
         let { userId } = req.params
-        console.log(userId)
         let posts = await postService.getPostsByUser(userId)
-        console.log(posts)
+        
         res.json(posts)
     }
 

@@ -3,7 +3,6 @@ let config = require('../config/app.config')
 
 let checkToken = (req, res, next) => {
     let token = req.headers['authorization'];
-    console.log(req.headers)
     if (token.startsWith('Bearer ')) {
         token = token.slice(7, token.length)
     }

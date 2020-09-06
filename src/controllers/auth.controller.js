@@ -39,15 +39,12 @@ class AuthController {
 
         switch (permission.role) {
             case 'USER':
-                console.log('user')
                 roles.push('USER')
                 break;
             case 'AUTHOR':
-                console.log('author')
                 roles.push('USER', 'AUTHOR')
                 break;
             case 'ADMIN':
-                console.log('admin')
                 roles.push('USER', 'AUTHOR', 'ADMIN')
                 break;
         }

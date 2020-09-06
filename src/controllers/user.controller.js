@@ -5,7 +5,6 @@ class UserController {
     async getUserById(req, res) {
         let { userId } = req.params
         let user = await userService.getUserById(userId)
-        console.log(user)
         res.json(user)
     }
 

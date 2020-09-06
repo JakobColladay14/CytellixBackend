@@ -9,7 +9,7 @@ class CommonService {
 
         let salt = bcrypt.genSaltSync(10)
         let hash = bcrypt.hashSync(pw, salt);
-        console.log(salt, hash, "This is after the bcrypt")
+
         password.salt = salt
         password.hash = hash
 
