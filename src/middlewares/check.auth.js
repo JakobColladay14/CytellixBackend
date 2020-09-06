@@ -14,6 +14,7 @@ let checkToken = (req, res, next) => {
                 return res.json({
                     success: false,
                     message: 'Token is not valid',
+                    code: 401
                 })
             } else {
                 req.decoded = decoded
@@ -23,7 +24,8 @@ let checkToken = (req, res, next) => {
     } else {
         return res.json({
             success: false,
-            message: 'Auth Token is not supplied'
+            message: 'Auth Token is not supplied',
+            code: 400
         })
     }
 }
